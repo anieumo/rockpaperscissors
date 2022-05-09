@@ -1,16 +1,10 @@
 
-function game(){
-//get player selection//
-    function player(){
-        window.input = prompt("player selection?");
-        alert(`Your  is fist is ${window.input}`);
-    }
-    player();
-    const playerSelection = window.input;
-    console.log(playerSelection);
+let cmptCount = 0;
+let plyerCount = 0;
+let movesleft = 10;
 
-
-    //get computer Selection?
+function getId(btn){
+    playerSelection = btn.id;
     function computer()
     {   
     var fists = [
@@ -22,55 +16,68 @@ function game(){
     }
     computer();
     const computerSelection = window.myfists;
+    document.getElementById("com").textContent = computerSelection;
+    document.getElementById("computer").textContent = playerSelection + " vs " + computerSelection;
     console.log(computerSelection);
-    window.cmptCount = 0;
-    window.plyerCount = 0;
+    console.log(playerSelection, computerSelection)
 
 
-    //play one round//
+
     function playRound(playerSelection, computerSelection) {
+        let result = document.getElementById("results");
+        movesleft--;
+
+
         if (playerSelection  == "rock" && computerSelection == "paper") {
-            window.cmptCount++;
-            return "you loose";
-        }
+            cmptCount++;
+            result.textContent = "you loose";
+            }
         if (playerSelection  == "rock" && computerSelection == "scissors") {
-            window.plyerCount++;
-            return "you win";
-        }
+            plyerCount++;
+            result.textContent = "you win";
+            }
         if (playerSelection  == "rock" && computerSelection == "rock") {
-            return "tie";
-        }
+            result.textContent = "tie";
+            }
         if (playerSelection  == "scissors" && computerSelection == "scissors") {
-            return "tie";
-        }
+            result.textContent = "tie";
+            }
         if (playerSelection  == "scissors" && computerSelection == "rock") {
-            window.cmptCount++;
-            return "you loose";
-        }
+            cmptCount++;
+            result.textContent = "you loose";
+            }
         if (playerSelection  == "scissors" && computerSelection == "paper") {
-            window.plyerCount++;
-            return "you win";
-        }
+            plyerCount++;
+            result.textContent = "you win";
+            }
         if (playerSelection  == "paper" && computerSelection == "rock") {
-            window.plyerCount++;
-            return "you win";
-        }
+            plyerCount++;
+            result.textContent = "you win";
+            }
         if (playerSelection  == "paper" && computerSelection == "scissors") {
-            window.cmptCount++;
-            return "you loose";
-        }
+            cmptCount++;
+            result.textContent = "you loose";
+            }
         if (playerSelection  == "paper" && computerSelection == "paper") {
-            return "tie";
-        }else{
+            result.textContent = "tie";
+            }else{
             return "error";
-        }
-
+            }    
+    
     }
-    console.log(playRound(playerSelection, computerSelection));
+    playRound(playerSelection, computerSelection);
+
+    function gameover(){
+        if (movesleft = 0) {
+            alert("game over")
+        }
+    }
+    gameover();
+
+    document.getElementById("player-score").textContent = plyerCount;
+    document.getElementById("computer-score").textContent = cmptCount;
 
 }
 
-for (let i = 0; i < 5; i++) {
-    game(i);
-    alert("computer score is: " + window.cmptCount + ", player score is: " + window.plyerCount);
-}
+
+

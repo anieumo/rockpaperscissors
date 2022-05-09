@@ -1,0 +1,99 @@
+ @font-face {
+    font-family: 'Ultra';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/ultra/v19/zOLy4prXmrtY-uT9wrKh68xE.woff2) format('woff2');
+}
+
+body{
+    background: rgb(111, 117, 122);
+}
+.scoreboard{
+    display: flex;
+    justify-content: center;
+    border-style: dotted;
+    font-family: 'Ultra';
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 500px;;
+    font-size: 30px;
+}
+.question{
+    font-size: 40px;
+    margin-top: 100px;
+    margin: 50px;
+    font-family: 'Ultra';
+    text-align: center;
+
+}
+.selector{
+    display: flex;
+    margin: 50px;
+    border-radius: 5em;
+    justify-content: center;
+}
+
+#rock{
+    outline: none;
+    border-radius: 2em;
+    margin: 10px;
+}
+#rock:hover{
+    outline: none;
+    border-style: inset;
+    margin: 10px;
+    opacity: .7;
+}
+#paper{
+    outline: none;
+    border-radius: 2em;
+    margin: 10px;
+}
+#paper:hover{
+    outline: none;
+    border-style: inset;
+    margin: 10px;
+    opacity: .7;
+}
+#scissors{
+    outline: none;
+    border-radius: 2em;
+    margin: 10px;
+}
+#scissors:hover{
+    outline: none;
+    border-style: inset;
+    margin: 10px;
+    opacity: .7;
+}
+#results{
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+    font-family: 'Ultra';
+    font-size: 40px;
+    color: red;
+    margin: 10px;
+    border-color: rgb(250, 63, 63);
+}
+#com{
+    font-size: 30px;
+    display: flex;
+    font-family: 'Ultra';
+    margin: 10px;
+    justify-content: center;
+}
+#comp{
+    font-size: 40px;
+    display: flex;
+    font-family: 'Ultra';
+    margin: 10px;
+    justify-content: center;
+}
+#computer{
+    font-size: 30px;
+    display: flex;
+    font-family: 'Ultra';
+    margin: 10px;
+    justify-content: center;
+}
